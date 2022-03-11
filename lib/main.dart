@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mini_project_1/shared/theme.dart';
 import 'package:mini_project_1/ui/pages/wrapper.dart';
 
 void main() {
@@ -13,9 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Majoo Mini Project',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      theme: CustomTheme.lightTheme,
       home: const Wrapper(),
     );
   }
