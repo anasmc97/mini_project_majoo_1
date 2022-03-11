@@ -33,7 +33,7 @@ class CustomTheme {
         ),
         caption: TextStyle(
           fontSize: 14.0,
-          color: CustomColors.black,
+          color: CustomColors.fontPrimary,
         ),
       ),
     );
