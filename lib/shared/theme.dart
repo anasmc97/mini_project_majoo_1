@@ -28,6 +28,7 @@ class CustomTheme {
         ),
         bodyText2: TextStyle(
           fontSize: 16.0,
+          fontWeight: FontWeight.w700,
           color: CustomColors.black,
         ),
         caption: TextStyle(
