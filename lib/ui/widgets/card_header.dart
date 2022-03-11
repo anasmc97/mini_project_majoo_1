@@ -2,13 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:mini_project_1/shared/context_extention.dart';
 import 'package:mini_project_1/shared/shared_value.dart';
 
-enum TypeCardView{
-  portrait,
-  landscape
-}
-
 class CardHeaderPromo extends StatelessWidget {
-  final TypeCardView typeCardView;
+  final TypeLayout typeLayout;
   final String? stringTitle;
   final String? stringRating;
   final String urlImage;
@@ -16,7 +11,7 @@ class CardHeaderPromo extends StatelessWidget {
   final EdgeInsets margin;
   const CardHeaderPromo({
     Key? key,
-    this.typeCardView = TypeCardView.portrait,
+    this.typeLayout = TypeLayout.portrait,
     this.stringRating,
     this.stringTitle,
     this.heightContent,
@@ -31,7 +26,7 @@ class CardHeaderPromo extends StatelessWidget {
     double sizeStar = 15;
     double widthBgContainer = context.mediaWidth;
     double? widthButton;
-    bool isLandscape = typeCardView == TypeCardView.landscape;
+    bool isLandscape = typeLayout == TypeLayout.landscape;
     if(isLandscape) {
       widthBgContainer = context.mediaWidth * 0.4;
       sizeTitle = 30;
