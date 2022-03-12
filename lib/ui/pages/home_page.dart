@@ -15,7 +15,7 @@ class HomePage extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         body: Column(
-          children: [],
+          children: [Container()],
         ),
       ),
     );
