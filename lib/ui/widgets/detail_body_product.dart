@@ -55,7 +55,10 @@ class _ProductDescription extends StatelessWidget {
     return Text(
       productDescription!,
       textAlign: TextAlign.center,
-      style: Theme.of(context).textTheme.bodyText1,
+      style: Theme.of(context)
+          .textTheme
+          .bodyText1!
+          .copyWith(fontWeight: FontWeight.normal),
     );
   }
 }
