@@ -15,48 +15,7 @@ class HomePage extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         body: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.only(
-                  left: CustomSize.defaultMargin, top: 20),
-              child: SearchField(
-                height: context.finalHeight * 0.15,
-                width: context.mediaWidth - (CustomSize.defaultMargin * 2),
-                hintText: "Search Your Topic...",
-                textStyle: CustomTheme.lightTheme.textTheme.bodyText1,
-                color: CustomColors.searchBarColor,
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.only(top: context.mediaHeight - 239.600),
-              child: NavBar(
-                [
-                  NavTile(
-                    Icons.ac_unit,
-                    color: Colors.white,
-                    size: 30,
-                  ),
-                  NavTile(
-                    Icons.access_alarm,
-                    color: Colors.white,
-                    size: 30,
-                  ),
-                  NavTile(
-                    Icons.access_time,
-                    color: Colors.white,
-                    size: 30,
-                  ),
-                  NavTile(
-                    Icons.accessibility,
-                    color: Colors.white,
-                    size: 30,
-                  )
-                ],
-                height: context.finalHeight * 0.15,
-                width: context.mediaWidth,
-              ),
-            )
-          ],
+          children: [Container()],
         ),
       ),
     );
