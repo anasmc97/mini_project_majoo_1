@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mini_project_1/shared/context_extention.dart';
+import 'package:mini_project_1/shared/context_extension.dart';
 import 'package:mini_project_1/shared/shared_value.dart';
 
 class CardHeaderPromo extends StatelessWidget {
