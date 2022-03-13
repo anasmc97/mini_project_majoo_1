@@ -12,6 +12,7 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+ task/Slider_widget
     return Scaffold(
       body: Column(
         children: [
