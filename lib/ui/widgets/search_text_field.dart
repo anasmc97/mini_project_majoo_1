@@ -27,24 +27,27 @@ class SearchTextField extends StatelessWidget {
         onFieldSubmitted: (value) {},
         textInputAction: TextInputAction.search,
         decoration: InputDecoration(
-            fillColor: color,
-            filled: true,
-            hintText: hintText,
-            hintStyle: textStyle,
-            prefixIcon: Visibility(
-              visible: true,
-              child: prefixIcon,
-            ),
-            suffixIcon: Visibility(
-              visible: true,
-              child: suffixIcon,
-            ),
-            enabledBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(50),
-                borderSide: const BorderSide(color: Colors.white)),
-            focusedBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(50),
-                borderSide: const BorderSide(color: Colors.white))),
+          fillColor: color,
+          filled: true,
+          hintText: hintText,
+          hintStyle: textStyle,
+          prefixIcon: Visibility(
+            visible: true,
+            child: prefixIcon,
+          ),
+          suffixIcon: Visibility(
+            visible: true,
+            child: suffixIcon,
+          ),
+          enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(50),
+            borderSide: const BorderSide(color: Colors.white),
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(50),
+            borderSide: const BorderSide(color: Colors.white),
+          ),
+        ),
       ),
     );
   }

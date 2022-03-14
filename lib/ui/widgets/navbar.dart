@@ -21,8 +21,8 @@ class _NavBarState extends State<NavBar> {
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
               colors: [
-                const Color(0xFF6E8DDD).withOpacity(0.6),
-                const Color(0xFF5C7BCD).withOpacity(0.4)
+                CustomColors.navBarColor1.withOpacity(0.6),
+                CustomColors.navBarColor2.withOpacity(0.4)
               ]),
           borderRadius: const BorderRadius.only(
               topLeft: Radius.circular(20), topRight: Radius.circular(20))),
