@@ -9,15 +9,15 @@ class CardHeaderPromo extends StatelessWidget {
   final String urlImage;
   final double? heightContent;
   final EdgeInsets margin;
-  const CardHeaderPromo({
-    Key? key,
-    this.typeLayout = TypeLayout.portrait,
-    this.stringRating,
-    this.stringTitle,
-    this.heightContent,
-    this.urlImage = "assets/image 22.png",
-    this.margin = const EdgeInsets.all(CustomSize.defaultMargin)
-  }) : super(key: key);
+  const CardHeaderPromo(
+      {Key? key,
+      this.typeLayout = TypeLayout.portrait,
+      this.stringRating,
+      this.stringTitle,
+      this.heightContent,
+      this.urlImage = "assets/image 22.png",
+      this.margin = const EdgeInsets.all(CustomSize.defaultMargin)})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +27,7 @@ class CardHeaderPromo extends StatelessWidget {
     double widthBgContainer = context.mediaWidth;
     double? widthButton;
     bool isLandscape = typeLayout == TypeLayout.landscape;
-    if(isLandscape) {
+    if (isLandscape) {
       widthBgContainer = context.mediaWidth * 0.4;
       sizeTitle = 30;
       sizeTextRating = 15;
@@ -47,11 +47,9 @@ class CardHeaderPromo extends StatelessWidget {
         gradient: const RadialGradient(colors: [
           CustomColors.secondary,
           CustomColors.primary,
-        ],
-            center: Alignment(0.4, 0.4),
-            radius: 1.5
-          //focalRadius: 1.5,
-        ));
+        ], center: Alignment(0.4, 0.4), radius: 1.5
+            //focalRadius: 1.5,
+            ));
 
     final ratingWidget = Row(
       children: [
@@ -61,17 +59,14 @@ class CardHeaderPromo extends StatelessWidget {
             color: CustomColors.starColor,
             size: sizeStar * context.media.textScaleFactor,
           ),
-          margin: const EdgeInsets.symmetric(
-              vertical: 8
-          ),
+          margin: const EdgeInsets.symmetric(vertical: 8),
         ),
         Flexible(
             child: Padding(
-              padding: const EdgeInsets.only(left: 4),
-              child: _buildText(context, stringRating, sizeTextRating, Colors.white),
-            )
-        ),
-
+          padding: const EdgeInsets.only(left: 4),
+          child:
+              _buildText(context, stringRating, sizeTextRating, Colors.white),
+        )),
       ],
     );
     final buttonPurchase = Container(
@@ -80,13 +75,12 @@ class CardHeaderPromo extends StatelessWidget {
       child: ElevatedButton(
           onPressed: () {},
           style: ElevatedButton.styleFrom(
-            shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(8)
-            ),
+            shape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
             primary: Colors.white,
           ),
-          child: _buildText(context, "Buy Now", sizeTextRating, CustomColors.primary)
-      ),
+          child: _buildText(
+              context, "Buy Now", sizeTextRating, CustomColors.primary)),
     );
 
     return Builder(
@@ -110,17 +104,20 @@ class CardHeaderPromo extends StatelessWidget {
                   child: Image.asset(urlImage),
                 ),
               ),
-              _buildText(context,
-                  (stringTitle.toString().isNotEmpty && stringTitle.toString().length > 18) ? "${stringTitle?.substring(0, 17)}...": stringTitle,
+              _buildText(
+                  context,
+                  (stringTitle.toString().isNotEmpty &&
+                          stringTitle.toString().length > 18)
+                      ? "${stringTitle?.substring(0, 17)}..."
+                      : stringTitle,
                   sizeTitle,
-                  Colors.white
-              ),
+                  Colors.white),
               ratingWidget,
               buttonPurchase
             ],
           ),
         );
-        if(isLandscape) {
+        if (isLandscape) {
           return landscapeWidget;
         }
 
@@ -139,10 +136,9 @@ class CardHeaderPromo extends StatelessWidget {
                     ),
                     Flexible(
                         child: Container(
-                          margin: const EdgeInsets.only(top: 8),
-                          child: Image.asset(urlImage),
-                        )
-                    )
+                      margin: const EdgeInsets.only(top: 8),
+                      child: Image.asset(urlImage),
+                    ))
                   ],
                 ),
               ),

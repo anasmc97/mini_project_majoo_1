@@ -8,12 +8,15 @@ class CustomColors {
   static const Color backgroundImage3 = Color(0xFFB8EBFF);
   static const Color fontPrimary = Color(0xFFA6A8AA);
   static const Color fontSecondary = Color(0xFF8691B3);
+  static const Color fontThird = Color(0xFF7291E2);
   static const Color black = Color(0xFF000000);
   static const Color white = Color(0xFFFFFFFF);
   static const Color navBarColor1 = Color(0xFF6E8DDD);
   static const Color navBarColor2 = Color(0xFF5C7BCD);
   static const Color searchBarColor = Color(0xFFEFF2FF);
   static const Color starColor = Color(0xFFF5B901);
+  static const Color searchIconColor = Color(0xFFADB8D9);
+  static const Color selectedIconColor = Color(0xFF6788E2);
 }
 
 class CustomSize {
