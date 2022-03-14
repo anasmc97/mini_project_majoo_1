@@ -51,7 +51,8 @@ class CardHeaderPromo extends StatelessWidget {
             center: Alignment(0.4, 0.4),
             radius: 1.5
           //focalRadius: 1.5,
-        ));
+        ),
+    );
 
     final ratingWidget = Row(
       children: [
@@ -71,7 +72,6 @@ class CardHeaderPromo extends StatelessWidget {
               child: _buildText(context, stringRating, sizeTextRating, Colors.white),
             )
         ),
-
       ],
     );
     final buttonPurchase = Container(
@@ -174,7 +174,8 @@ class CardHeaderPromo extends StatelessWidget {
               ? sizeText * context.media.textScaleFactor
               : sizeText,
           color: colorText,
-          fontWeight: FontWeight.w600),
+          fontWeight: FontWeight.w600
+      ),
       textAlign: TextAlign.start,
     );
   }
