@@ -12,27 +12,6 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
- task/Slider_widget
-    return Scaffold(
-      body: Column(
-        children: [
-          SliderWidgetImage(
-            typeLayout: typeLayout,
-            heightContent: context.finalHeight * 0.5,
-            imgList: const [
-              "assets/image 22 big.png",
-              "assets/image 22 big.png",
-              "assets/image 22 big.png",
-            ],
-            onBack: () {},
-            onFavorite: () {},
-          ),
-          // const CardHeaderPromo(
-          //   stringRating: "4.9 (542)",
-          //   stringTitle: "Dji Phantom Drone",
-          // )
-        ],
-      ),
-    );
+    return Scaffold(body: Container());
   }
 }
