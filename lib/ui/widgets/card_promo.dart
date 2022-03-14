@@ -51,7 +51,6 @@ class CardHeaderPromo extends StatelessWidget {
       ],
           center: Alignment(0.4, 0.4),
           radius: 1.5
-        //focalRadius: 1.5,
       ),
     );
 
@@ -100,7 +99,6 @@ class CardHeaderPromo extends StatelessWidget {
           decoration: decorationCard,
           width: widthBgContainer,
           height: heightContent,
-          //height: (context.mediaHeight - 24 - CustomSize.defaultMargin),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
