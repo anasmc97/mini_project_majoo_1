@@ -9,16 +9,16 @@ class ProductCard extends StatelessWidget {
   final String? productRatting;
   final String? totalRatting;
   final String? productPrice;
-  const ProductCard(
-      {Key? key,
-      this.imageUrl,
-      this.color,
-      this.productName,
-      this.productDesc,
-      this.productRatting,
-      this.totalRatting,
-      this.productPrice})
-      : super(key: key);
+  const ProductCard({
+    Key? key,
+    this.imageUrl,
+    this.color,
+    this.productName,
+    this.productDesc,
+    this.productRatting,
+    this.totalRatting,
+    this.productPrice,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +41,10 @@ class ProductCard extends StatelessWidget {
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            _ProductImage(imageUrl: imageUrl, color: color),
+            _ProductImage(
+              imageUrl: imageUrl,
+              color: color,
+            ),
             const SizedBox(
               width: 20,
             ),
@@ -62,7 +65,11 @@ class ProductCard extends StatelessWidget {
 class _ProductImage extends StatelessWidget {
   final String? imageUrl;
   final Color? color;
-  const _ProductImage({Key? key, this.color, this.imageUrl}) : super(key: key);
+  const _ProductImage({
+    Key? key,
+    this.color,
+    this.imageUrl,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -70,14 +77,17 @@ class _ProductImage extends StatelessWidget {
       width: 100,
       height: 100,
       decoration: ShapeDecoration(
-          color: color,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10),
-          )),
+        color: color,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10),
+        ),
+      ),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 6.0, vertical: 8.0),
-        child:
-            Image.asset(imageUrl ?? 'assets/image 22.png', fit: BoxFit.cover),
+        child: Image.asset(
+          imageUrl ?? 'assets/image 22.png',
+          fit: BoxFit.cover,
+        ),
       ),
     );
   }
@@ -89,14 +99,14 @@ class _ProductBody extends StatelessWidget {
   final String? productRatting;
   final String? totalRatting;
   final String? productPrice;
-  const _ProductBody(
-      {Key? key,
-      this.productName,
-      this.productDesc,
-      this.productRatting,
-      this.totalRatting,
-      this.productPrice})
-      : super(key: key);
+  const _ProductBody({
+    Key? key,
+    this.productName,
+    this.productDesc,
+    this.productRatting,
+    this.totalRatting,
+    this.productPrice,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -108,13 +118,17 @@ class _ProductBody extends StatelessWidget {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(productName ?? '',
-                  style: Theme.of(context).textTheme.bodyText2),
+              Text(
+                productName ?? '',
+                style: Theme.of(context).textTheme.bodyText2,
+              ),
               const SizedBox(
                 height: 5,
               ),
-              Text(productDesc ?? '',
-                  style: Theme.of(context).textTheme.caption),
+              Text(
+                productDesc ?? '',
+                style: Theme.of(context).textTheme.caption,
+              ),
             ],
           ),
           Row(
@@ -124,17 +138,24 @@ class _ProductBody extends StatelessWidget {
                 children: [
                   const Icon(Icons.star, color: Color(0xFFF5B901)),
                   const SizedBox(width: 10.0),
-                  Text(productRatting ?? '',
-                      style: Theme.of(context).textTheme.caption),
+                  Text(
+                    productRatting ?? '',
+                    style: Theme.of(context).textTheme.caption,
+                  ),
                   const SizedBox(width: 5.0),
-                  Text('($totalRatting)',
-                      style: Theme.of(context).textTheme.caption),
+                  Text(
+                    '($totalRatting)',
+                    style: Theme.of(context).textTheme.caption,
+                  ),
                 ],
               ),
-              Text('\$$productPrice',
-                  style: Theme.of(context).textTheme.caption!.copyWith(
+              Text(
+                '\$$productPrice',
+                style: Theme.of(context).textTheme.caption!.copyWith(
                       color: CustomColors.primary,
-                      fontWeight: FontWeight.w700)),
+                      fontWeight: FontWeight.w700,
+                    ),
+              ),
             ],
           )
         ],
