@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:mini_project_1/shared/context_extention.dart';
 import 'package:mini_project_1/shared/shared_value.dart';
 
 class DetailBodyProduct extends StatelessWidget {
   final String? productName;
   final String? productDescription;
   final String? productPrice;
-  const DetailBodyProduct(
-      {Key? key,
-      required this.productName,
-      required this.productDescription,
-      required this.productPrice})
-      : super(key: key);
+  const DetailBodyProduct({
+    Key? key,
+    required this.productName,
+    required this.productDescription,
+    required this.productPrice,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -69,9 +70,9 @@ class _IncrementDecrementButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: MediaQuery.of(context).orientation == Orientation.portrait
-          ? MediaQuery.of(context).size.width * 0.5
-          : MediaQuery.of(context).size.width * 0.25,
+      width: context.isPortrait
+          ? context.mediaWidth * 0.5
+          : context.mediaWidth * 0.25,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
