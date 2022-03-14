@@ -39,14 +39,14 @@ class ListProductCard extends StatelessWidget {
       },
     ];
 
-    return ListView.builder(
-      itemCount: data.length,
-      itemBuilder: (BuildContext context, int index) {
-        return Padding(
-          padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 24),
-          child: SizedBox(
-            width: width,
-            height: height,
+    return SizedBox(
+      width: width,
+      height: height,
+      child: ListView.builder(
+        itemCount: data.length,
+        itemBuilder: (BuildContext context, int index) {
+          return Padding(
+            padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 24),
             child: GestureDetector(
               onTap: () {},
               child: ProductCard(
@@ -59,9 +59,9 @@ class ListProductCard extends StatelessWidget {
                 color: data[index]['backgroundColor'],
               ),
             ),
-          ),
-        );
-      },
+          );
+        },
+      ),
     );
   }
 }
