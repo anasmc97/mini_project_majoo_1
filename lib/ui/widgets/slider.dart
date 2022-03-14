@@ -8,13 +8,13 @@ import 'package:scroll_to_index/scroll_to_index.dart';
 
 class SliderWidgetImage extends StatefulWidget {
   final TypeLayout typeLayout;
-  final double? heightContent;
+  final double heightContent;
   final List<String> imgList;
   final GestureTapCallback? onBack;
   final GestureTapCallback? onFavorite;
   const SliderWidgetImage({Key? key,
     this.typeLayout = TypeLayout.portrait,
-    this.heightContent,
+    this.heightContent = 100,
     this.imgList = const [
       "assets/image 22 big.png",
       "assets/image 22 big.png",
@@ -57,9 +57,6 @@ class _SliderWidgetImage extends State<SliderWidgetImage> {
     double sizeDot = 22;
     bool isLandscape = typeLayout == TypeLayout.landscape;
     double widthBackButton = widthBgContainer - (24 * 2);
-    if(widget.heightContent != null) {
-      heightContainer = widget.heightContent!;
-    }
 
     if(heightContainer < context.finalHeight * 0.4){
       heightContainer = context.finalHeight * 0.4;
@@ -79,58 +76,30 @@ class _SliderWidgetImage extends State<SliderWidgetImage> {
       );
     }
 
-    final decorationCard = BoxDecoration(
-        borderRadius:  BorderRadius.only(
-          bottomLeft: !isLandscape ? const Radius.circular(16) : const Radius.circular(0),
-          bottomRight: const Radius.circular(16),
-          topRight: isLandscape ? const Radius.circular(16) : const Radius.circular(0),
-        ),
-        boxShadow: [
-          BoxShadow(
-              color: CustomColors.sliderShadowColor.withOpacity(0.5),
-              offset: const Offset(0, 4),
-              spreadRadius: 0,
-              blurRadius: 20
-          )
-        ],
-        gradient: const RadialGradient(colors: [
+    final decorationCard = _buildDecoration(
+        isLandscape,
+        [
           CustomColors.secondary,
-          CustomColors.primary,
-        ],
-            radius: 1.5
-        ));
+          CustomColors.primary
+        ]
+    );
 
     final List<String> imgList = widget.imgList;
-    final List<Widget> imageSliders = imgList.map((item) => SizedBox(
-      height: 20,
-      child: Container(
-        margin: const EdgeInsets.symmetric(horizontal: 1),
-        child: ClipRRect(
-          child: Image.asset(
-            item,
-            width: widthBgContainer,
+    final List<Widget> imageSliders = imgList.map((item) =>
+        SizedBox(
+          height: 20,
+          child: Container(
+            margin: const EdgeInsets.symmetric(horizontal: 1),
+            child: ClipRRect(
+              child: Image.asset(
+                item,
+                width: widthBgContainer,
+              ),
+            ),
           ),
-        ),
-      ),
-    ))
-        .toList();
-    Widget backButton = SafeArea(
-      child: Container(
-        width: widthBackButton,
-        padding: !isLandscape ? null : EdgeInsets.only(
-          top: 24,
-          left: (context.media.padding.horizontal/2),
-        ),
-        child: Row(
-          mainAxisSize: MainAxisSize.max,
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            _buildButton(Icons.arrow_back_ios_outlined, widget.onFavorite),
-            _buildButton(Icons.favorite_border_rounded, widget.onFavorite),
-          ],
-        ),
-      ),
-    );
+        )).toList();
+
+    final backButton = _buildBackButton(isLandscape, widthBackButton);
 
     return Container(
       padding: paddingContainer,
@@ -201,7 +170,8 @@ class _SliderWidgetImage extends State<SliderWidgetImage> {
                       ) ,
                     ),
                   ),
-                ]),
+                ],
+            ),
           ),
           Positioned(
             top: 0,
@@ -233,6 +203,46 @@ class _SliderWidgetImage extends State<SliderWidgetImage> {
     );
   }
 
+  BoxDecoration _buildDecoration(bool isLandscape, List<Color> gradientsColor) {
+    return BoxDecoration(
+        borderRadius:  BorderRadius.only(
+          bottomLeft: !isLandscape ? const Radius.circular(16) : const Radius.circular(0),
+          bottomRight: const Radius.circular(16),
+          topRight: isLandscape ? const Radius.circular(16) : const Radius.circular(0),
+        ),
+        boxShadow: [
+          BoxShadow(
+              color: CustomColors.sliderShadowColor.withOpacity(0.5),
+              offset: const Offset(0, 4),
+              spreadRadius: 0,
+              blurRadius: 20
+          )
+        ],
+        gradient: RadialGradient(
+            colors: gradientsColor,
+            radius: 1.5
+        )
+    );
+  }
 
+  Widget _buildBackButton(bool isLandscape, double widthBackButton) {
+    return SafeArea(
+      child: Container(
+        width: widthBackButton,
+        padding: !isLandscape ? null : EdgeInsets.only(
+          top: 24,
+          left: (context.media.padding.horizontal/2),
+        ),
+        child: Row(
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            _buildButton(Icons.arrow_back_ios_outlined, widget.onFavorite),
+            _buildButton(Icons.favorite_border_rounded, widget.onFavorite),
+          ],
+        ),
+      ),
+    );
+  }
 
 }
