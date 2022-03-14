@@ -244,5 +244,4 @@ class _SliderWidgetImage extends State<SliderWidgetImage> {
       ),
     );
   }
-
 }
