@@ -64,9 +64,16 @@ class _ProductDescription extends StatelessWidget {
   }
 }
 
-class _IncrementDecrementButton extends StatelessWidget {
+class _IncrementDecrementButton extends StatefulWidget {
   const _IncrementDecrementButton({Key? key}) : super(key: key);
 
+  @override
+  State<_IncrementDecrementButton> createState() =>
+      _IncrementDecrementButtonState();
+}
+
+class _IncrementDecrementButtonState extends State<_IncrementDecrementButton> {
+  int _count = 0;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -77,7 +84,12 @@ class _IncrementDecrementButton extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           GestureDetector(
-            onTap: () {},
+            onTap: () {
+              setState(() {
+                if (_count <= 0) return;
+                _count--;
+              });
+            },
             child: Container(
               padding: const EdgeInsets.all(8),
               decoration: BoxDecoration(
@@ -103,7 +115,7 @@ class _IncrementDecrementButton extends StatelessWidget {
               borderRadius: BorderRadius.circular(6),
             ),
             child: Text(
-              '01',
+              _count.toString(),
               style: Theme.of(context)
                   .textTheme
                   .bodyText1!
@@ -111,7 +123,12 @@ class _IncrementDecrementButton extends StatelessWidget {
             ),
           ),
           GestureDetector(
-            onTap: () {},
+            onTap: () {
+              setState(() {
+                if (_count >= 100) return;
+                _count++;
+              });
+            },
             child: Container(
               padding: const EdgeInsets.all(8),
               decoration: BoxDecoration(
