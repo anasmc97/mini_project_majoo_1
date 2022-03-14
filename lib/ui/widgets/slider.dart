@@ -130,7 +130,8 @@ class _SliderWidgetImage extends State<SliderWidgetImage> {
                           enableInfiniteScroll: false,
                           viewportFraction: 1.0,
                           aspectRatio: 2.0,
-                          onPageChanged: (index, reason) =>  setState(() => _onChange(index))),
+                          onPageChanged: (index, reason) => setState(() => _onChange(index)),
+                      ),
                     ),
                   ),
                   Container(
