@@ -7,16 +7,14 @@ import 'package:scroll_to_index/scroll_to_index.dart';
 
 class SliderWidgetImage extends StatefulWidget {
   final TypeLayout typeLayout;
-  final double heightContent;
+  final double? heightContent;
   final List<String> imgList;
   final GestureTapCallback? onBack;
   final GestureTapCallback? onFavorite;
   const SliderWidgetImage({Key? key,
     this.typeLayout = TypeLayout.portrait,
-    required this.heightContent,
+    this.heightContent,
     this.imgList = const [
-      "assets/image 22 big.png",
-      "assets/image 22 big.png",
       "assets/image 22 big.png",
       "assets/image 22 big.png",
       "assets/image 22 big.png",
@@ -54,10 +52,13 @@ class _SliderWidgetImage extends State<SliderWidgetImage> {
   Widget build(BuildContext context) {
     TypeLayout typeLayout = widget.typeLayout;
     double widthBgContainer = context.mediaWidth;
-    double heightContainer = widget.heightContent;
+    double heightContainer = context.finalHeight * 0.5;
     double sizeDot = 22;
     bool isLandscape = typeLayout == TypeLayout.landscape;
     double widthBackButton = widthBgContainer - (24 * 2);
+    if(widget.heightContent != null) {
+      heightContainer = widget.heightContent!;
+    }
 
     if(heightContainer < context.finalHeight * 0.4){
       heightContainer = context.finalHeight * 0.4;
@@ -85,7 +86,7 @@ class _SliderWidgetImage extends State<SliderWidgetImage> {
         ),
         boxShadow: [
           BoxShadow(
-              color: const Color(0xFF6C8CE2).withOpacity(0.5),
+              color: CustomColors.sliderShadowColor.withOpacity(0.5),
               offset: const Offset(0, 4),
               spreadRadius: 0,
               blurRadius: 20
@@ -104,7 +105,10 @@ class _SliderWidgetImage extends State<SliderWidgetImage> {
       child: Container(
         margin: const EdgeInsets.symmetric(horizontal: 1),
         child: ClipRRect(
-            child: Image.asset(item, width: widthBgContainer,)
+            child: Image.asset(
+              item,
+              width: widthBgContainer,
+            ),
         ),
       ),
     ))
