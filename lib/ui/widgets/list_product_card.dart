@@ -3,9 +3,12 @@ import 'package:mini_project_1/shared/shared_value.dart';
 import 'package:mini_project_1/ui/widgets/product_card.dart';
 
 class ListProductCard extends StatelessWidget {
+  final Function(Map) onTap;
   final double? width;
   final double? height;
-  const ListProductCard({Key? key, this.width, this.height}) : super(key: key);
+  const ListProductCard(
+      {Key? key, this.width, this.height, required this.onTap})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -48,7 +51,7 @@ class ListProductCard extends StatelessWidget {
           return Padding(
             padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 24),
             child: GestureDetector(
-              onTap: () {},
+              onTap: onTap(data[index]),
               child: ProductCard(
                 productName: data[index]['productName'],
                 productDesc: data[index]['productDesc'],
