@@ -160,9 +160,7 @@ class _AddToCartButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: MediaQuery.of(context).orientation == Orientation.portrait
-          ? double.infinity
-          : MediaQuery.of(context).size.width * 0.5,
+      width: context.isPortrait ? double.infinity : context.mediaWidth * 0.5,
       padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 16),
       decoration: BoxDecoration(
         gradient: const LinearGradient(
