@@ -108,13 +108,17 @@ class _ProductBody extends StatelessWidget {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(productName ?? '',
-                  style: Theme.of(context).textTheme.bodyText2),
+              Text(
+                productName ?? '',
+                style: Theme.of(context).textTheme.bodyText2,
+              ),
               const SizedBox(
                 height: 5,
               ),
-              Text(productDesc ?? '',
-                  style: Theme.of(context).textTheme.caption),
+              Text(
+                productDesc ?? '',
+                style: Theme.of(context).textTheme.caption,
+              ),
             ],
           ),
           Row(
@@ -124,17 +128,24 @@ class _ProductBody extends StatelessWidget {
                 children: [
                   const Icon(Icons.star, color: Color(0xFFF5B901)),
                   const SizedBox(width: 10.0),
-                  Text(productRatting ?? '',
-                      style: Theme.of(context).textTheme.caption),
+                  Text(
+                    productRatting ?? '',
+                    style: Theme.of(context).textTheme.caption,
+                  ),
                   const SizedBox(width: 5.0),
-                  Text('($totalRatting)',
-                      style: Theme.of(context).textTheme.caption),
+                  Text(
+                    '($totalRatting)',
+                    style: Theme.of(context).textTheme.caption,
+                  ),
                 ],
               ),
-              Text('\$$productPrice',
-                  style: Theme.of(context).textTheme.caption!.copyWith(
+              Text(
+                '\$$productPrice',
+                style: Theme.of(context).textTheme.caption!.copyWith(
                       color: CustomColors.primary,
-                      fontWeight: FontWeight.w700)),
+                      fontWeight: FontWeight.w700,
+                    ),
+              ),
             ],
           )
         ],
