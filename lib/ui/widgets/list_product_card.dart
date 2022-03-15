@@ -24,7 +24,9 @@ class ListProductCard extends StatelessWidget {
           return Padding(
             padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 24),
             child: GestureDetector(
-              onTap: onTap(data),
+              onTap: () {
+                onTap(data);
+              },
               child: ProductCard(
                 productName: data.productName,
                 productDesc: data.productDesc,
