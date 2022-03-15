@@ -1,7 +1,5 @@
-<<<<<<< HEAD
-// barrel file
 export 'navbar.dart';
 export 'search_text_field.dart';
-=======
-// barrel file
->>>>>>> main
+export 'card_promo.dart';
+export 'slider.dart';
+

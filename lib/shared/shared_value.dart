@@ -17,6 +17,7 @@ class CustomColors {
   static const Color starColor = Color(0xFFF5B901);
   static const Color searchIconColor = Color(0xFFADB8D9);
   static const Color selectedIconColor = Color(0xFF6788E2);
+  static const Color sliderShadowColor = Color(0xFF6C8CE2);
 }
 
 class CustomSize {
