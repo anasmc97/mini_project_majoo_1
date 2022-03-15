@@ -6,8 +6,8 @@ class ProductCard extends StatelessWidget {
   final Color? color;
   final String? productName;
   final String? productDesc;
-  final String? productRatting;
-  final String? totalRatting;
+  final String? productRating;
+  final String? totalRating;
   final String? productPrice;
   const ProductCard({
     Key? key,
@@ -15,8 +15,8 @@ class ProductCard extends StatelessWidget {
     this.color,
     this.productName,
     this.productDesc,
-    this.productRatting,
-    this.totalRatting,
+    this.productRating,
+    this.totalRating,
     this.productPrice,
   }) : super(key: key);
 
@@ -51,8 +51,8 @@ class ProductCard extends StatelessWidget {
             _ProductBody(
               productDesc: productDesc,
               productName: productName,
-              productRatting: productRatting,
-              totalRatting: totalRatting,
+              productRating: productRating,
+              totalRating: totalRating,
               productPrice: productPrice,
             ),
           ],
@@ -96,15 +96,15 @@ class _ProductImage extends StatelessWidget {
 class _ProductBody extends StatelessWidget {
   final String? productName;
   final String? productDesc;
-  final String? productRatting;
-  final String? totalRatting;
+  final String? productRating;
+  final String? totalRating;
   final String? productPrice;
   const _ProductBody({
     Key? key,
     this.productName,
     this.productDesc,
-    this.productRatting,
-    this.totalRatting,
+    this.productRating,
+    this.totalRating,
     this.productPrice,
   }) : super(key: key);
 
@@ -139,12 +139,12 @@ class _ProductBody extends StatelessWidget {
                   const Icon(Icons.star, color: Color(0xFFF5B901)),
                   const SizedBox(width: 10.0),
                   Text(
-                    productRatting ?? '',
+                    productRating ?? '',
                     style: Theme.of(context).textTheme.caption,
                   ),
                   const SizedBox(width: 5.0),
                   Text(
-                    '($totalRatting)',
+                    '($totalRating)',
                     style: Theme.of(context).textTheme.caption,
                   ),
                 ],
