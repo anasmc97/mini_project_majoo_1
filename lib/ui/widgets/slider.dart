@@ -238,7 +238,7 @@ class _SliderWidgetImage extends State<SliderWidgetImage> {
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            _buildButton(Icons.arrow_back_ios_outlined, widget.onFavorite),
+            _buildButton(Icons.arrow_back_ios_outlined, widget.onBack),
             _buildButton(Icons.favorite_border_rounded, widget.onFavorite),
           ],
         ),
