@@ -14,6 +14,7 @@ class CustomColors {
   static const Color navBarColor2 = Color(0xFF5C7BCD);
   static const Color searchBarColor = Color(0xFFEFF2FF);
   static const Color starColor = Color(0xFFF5B901);
+  static const Color sliderShadowColor = Color(0xFF6C8CE2);
 }
 
 class CustomSize {
