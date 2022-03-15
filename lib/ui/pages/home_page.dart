@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mini_project_1/shared/context_extension.dart';
 import 'package:mini_project_1/shared/shared_value.dart';
 
 class HomePage extends StatelessWidget {
@@ -8,10 +9,8 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        body: Container(),
-      ),
+    return Scaffold(
+      body: Container(),
     );
   }
 }
