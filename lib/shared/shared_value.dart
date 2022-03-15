@@ -22,6 +22,7 @@ class CustomColors {
 
 class CustomSize {
   static const double defaultMargin = 24;
+  static const double maxWidthLayout = 480;
 }
 
 enum TypeLayout { portrait, landscape }
