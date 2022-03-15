@@ -24,4 +24,12 @@ extension Media on BuildContext {
   double get scaleFactorText {
     return MediaQuery.of(this).textScaleFactor;
   }
+
+  bool get isLandscape {
+    return MediaQuery.of(this).orientation == Orientation.landscape;
+  }
+
+  bool get isPortrait {
+    return MediaQuery.of(this).orientation == Orientation.portrait;
+  }
 }
