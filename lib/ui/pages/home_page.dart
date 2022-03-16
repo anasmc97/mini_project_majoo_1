@@ -17,11 +17,11 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
-    return SafeArea(
-      child: Scaffold(
-        key: _scaffoldKey,
-        drawer: const DrawerWidget(),
-        body: Builder(
+    return Scaffold(
+      key: _scaffoldKey,
+      drawer: const DrawerWidget(),
+      body: SafeArea(
+        child: Builder(
           builder: (context) {
             const goToPageCardPromo = DetailProductPage(
               productName: "Dji Phantom Drone",
