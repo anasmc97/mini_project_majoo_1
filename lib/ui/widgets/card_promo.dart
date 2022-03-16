@@ -10,6 +10,7 @@ class CardHeaderPromo extends StatelessWidget {
   final String urlImage;
   final double? heightContent;
   final EdgeInsets margin;
+  final GestureTapCallback? onPress;
   const CardHeaderPromo({
     Key? key,
     this.typeLayout = TypeLayout.portrait,
@@ -17,6 +18,7 @@ class CardHeaderPromo extends StatelessWidget {
     this.stringTitle,
     this.heightContent,
     this.urlImage = "assets/image 22.png",
+    this.onPress,
     this.margin = const EdgeInsets.all(CustomSize.defaultMargin)
   }) : super(key: key);
 
@@ -78,7 +80,7 @@ class CardHeaderPromo extends StatelessWidget {
       width: widthButton,
       padding: const EdgeInsets.only(top: 8),
       child: ElevatedButton(
-          onPressed: () {},
+          onPressed: onPress ?? () {},
           style: ElevatedButton.styleFrom(
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(8)
